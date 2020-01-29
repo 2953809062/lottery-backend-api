@@ -1,0 +1,53 @@
+<div class="layui-form-item">
+	<label for="platforms" class="layui-form-label"> <span class="x-red">*</span>平台 </label>
+	<div class="layui-inline layui-show-sx-block">
+		<select name="platform_id" id="platforms"> 
+			<option value="">请选择平台</option>
+		</select>
+		</div>
+	</div>
+</div>
+<div class="layui-form-item">
+	<label for="sites" class="layui-form-label"> <span class="x-red">*</span>站点 </label>
+	<div class="layui-inline layui-show-sx-block">
+		<select name="site_id" id="sites"> 
+			<option value="">请选择站点</option>
+		</select>
+		</div>
+	</div>
+</div>
+<div class="layui-form-item">
+	<label for="name" class="layui-form-label"> <span class="x-red">*</span>配置名称 </label>
+	<div class="layui-input-inline">
+		<input type="text" id="name" name="name" lay-verify="required" class="layui-input"  placeholder="请输入配置名称" />
+	</div>
+</div>
+<div class="layui-form-item">
+	<label for="value" class="layui-form-label"> <span class="x-red">*</span>配置内容 </label>
+	<div class="layui-input-inline">
+		<input type="text" id="value" name="value" lay-verify="required" class="layui-input"  placeholder="请输入配置内容" />
+	</div>
+</div>
+<div class="layui-form-item">
+	<label for="status" class="layui-form-label"> <span class="x-red">*</span>状态 </label>
+	<div class="layui-inline layui-show-sx-block">
+		<select name="status" id="status">
+			<option value="0">停用</option>
+			<option value="1">启用</option>
+		</select>
+		</div>
+	</div>
+</div>
+<div class="layui-form-item">
+	<label for="sort" class="layui-form-label"> <span class="x-red">*</span>排序 </label>
+	<div class="layui-input-inline">
+		<input type="text" id="sort" name="sort" lay-verify="number" class="layui-input" placeholder="请输入排序" value="0" />
+	</div>
+</div>
+<div class="layui-form-item">
+	<label for="remark" class="layui-form-label"> 备注 </label>
+	<div class="layui-input-inline">
+		<input type="text" id="remark" name="remark" class="layui-input" placeholder="请输入备注" />
+	</div>
+</div>
+

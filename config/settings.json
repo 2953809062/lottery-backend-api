@@ -1,0 +1,15 @@
+{
+    "version":"1.0",
+    "database": {
+        "type":"mysql",
+        "platform":"sys_platform",
+        "conn_string":"platform_sys:platform-x-147@/sys_platform?charset=utf8"
+    },
+	"pg": {
+        "type":"postgres",
+        "platform":"sys_platform",
+        "conn_string":"postgres://postgres:qwe123@localhost:5432/sys_platform?sslmode=disable;"
+    },
+	"platform":"sys_platform",
+	"admin_url":"127.0.0.1:8801,a.game.my"
+}

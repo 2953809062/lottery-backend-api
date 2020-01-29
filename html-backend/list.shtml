@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+	<head>
+		<!--#include virtual="/_include/head.html" -->
+		<link href="/_static/css/list.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--#include virtual="/_include/nav.html" -->
+		<div class="layui-fluid">
+			<div class="layui-row layui-col-space15">
+				<div class="layui-col-md12">
+					<div class="layui-card">
+						<div class="layui-card-body ">
+							<form class="layui-form layui-col-space5" id="form-search" method="get"> </form>
+						</div>
+						<div class="layui-card-header layui-hide" id="action-option">
+							<button id="action-delete" class="layui-btn layui-btn-danger layui-hide" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+							<button id="action-create" class="layui-btn layui-hide" url=""><i class="layui-icon"></i>添加</button>
+						</div>
+						<div class="layui-card-body ">
+							<table class="layui-table layui-form">
+								<thead> <tr><th> <input type="checkbox" name=""  lay-skin="primary"> </th></tr> </thead>
+								<tbody> </tbody>
+							</table>
+						</div>
+						<div class="layui-card-body "> <div class="page" id="pager"> </div> </div>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</body>
+<script src="/_static/js/list.js"> </script>
+</html>

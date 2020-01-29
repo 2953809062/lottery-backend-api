@@ -1,0 +1,59 @@
+<div class="layui-form-item">
+	<label for="L_pass" class="layui-form-label"> <span class="x-red">*</span>彩种 </label>
+	<div class="layui-inline layui-show-sx-block">
+		<select name="lottery_id" id="lotteries">
+			<option value="">请选择彩种</option>
+		</select>
+		</div>
+	</div>
+</div>
+<div class="layui-form-item">
+	<label for="title" class="layui-form-label"> <span class="x-red">*</span>奖期 </label>
+	<div class="layui-input-inline">
+		<input type="text" id="period_number" name="period_number" lay-verify="required" class="layui-input"  placeholder="请输入奖期" />
+	</div>
+</div>
+<div class="layui-form-item">
+	<label for="title" class="layui-form-label"> <span class="x-red">*</span>封盘时间 </label>
+	<div class="layui-input-inline">
+		<input type="text" id="time_close" name="time_close" lay-verify="required" class="layui-input"  placeholder="请输入封盘时间" />
+	</div>
+</div>
+<div class="layui-form-item">
+	<label for="title" class="layui-form-label"> <span class="x-red">*</span>开奖时间 </label>
+	<div class="layui-input-inline">
+		<input type="text" id="time_open" name="time_open" lay-verify="required" class="layui-input"  placeholder="请输入开奖时间" />
+	</div>
+</div>
+<div class="layui-form-item">
+	<label for="title" class="layui-form-label"> <span class="x-red">*</span>天数偏移 </label>
+	<div class="layui-input-inline">
+		<input type="text" id="day_offset" name="day_offset" lay-verify="required" class="layui-input"  placeholder="请输入天数偏移" value="0" />
+	</div>
+</div>
+<div class="layui-form-item">
+	<label for="L_pass" class="layui-form-label"> <span class="x-red">*</span>首期 </label>
+	<div class="layui-inline layui-show-sx-block">
+		<select name="is_begin">
+			<option value="0">否</option>
+			<option value="1">是</option>
+		</select>
+		</div>
+	</div>
+</div>
+<div class="layui-form-item">
+	<label for="L_pass" class="layui-form-label"> <span class="x-red">*</span>末期 </label>
+	<div class="layui-inline layui-show-sx-block">
+		<select name="is_end">
+			<option value="0">否</option>
+			<option value="1">是</option>
+		</select>
+		</div>
+	</div>
+</div>
+<div class="layui-form-item">
+	<label for="title" class="layui-form-label"> <span class="x-red">*</span>排序 </label>
+	<div class="layui-input-inline">
+		<input type="text" id="sort" name="sort" lay-verify="required" class="layui-input"  placeholder="请输入排序" value="0" />
+	</div>
+</div>

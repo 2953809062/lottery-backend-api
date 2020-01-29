@@ -1,0 +1,7 @@
+.layui-table td { padding: 3px 15px; }
+.layui-table th { padding: 5px 15px; font-weight: bold; }
+#action-delete { margin-left: 0px; margin-right: 15px; }
+#action-create { margin-left: 0px; }
+.page span { padding: 0 5px; }
+.page a { padding: 0 5px; }
+

@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-toolbar clearfix">
+                <form class="pull-right search-bar" method="get" action="#!" role="form">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <input type="hidden" name="search_field" id="search-field" value="title" />
+                            <button class="btn btn-default dropdown-toggle" id="search-btn" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false"> 标题 <span class="caret"></span> </button>
+                            <ul class="dropdown-menu">
+                                <li> <a tabindex="-1" href="javascript:void(0)" data-field="title">标题</a> </li>
+                            </ul>
+                        </div>
+                        <input type="text" class="form-control" value="" name="keyword" placeholder="请输入名称">
+                    </div>
+                </form>
+                <div class="toolbar-btn-action">
+                    <a class="btn btn-primary m-r-5 action-links" href="#" id="action-create" link="" style="display: none"><i class="mdi mdi-plus"></i> 新增</a>
+					<a class="btn btn-danger action-links" href="#" link="" id="action-delete" style="display: none"><i class="mdi mdi-window-close"></i> 删除</a>
+					<!--<a class="btn btn-success m-r-5" href="#!"><i class="mdi mdi-check"></i> 启用</a>
+					<a class="btn btn-warning m-r-5" href="#!"><i class="mdi mdi-block-helper"></i> 禁用</a>-->
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr id="index-headers">
+                                <th width="50"><label class="lyear-checkbox checkbox-primary"><input type="checkbox" id="check-all" /><span></span></label></th>
+                            </tr>
+                        </thead>
+                        <tbody id="index-rows">
+                            <!--<tr>
+                                <td><label class="lyear-checkbox checkbox-primary"><input type="checkbox" name="ids[]" value="1"><span></span></label></td>
+                            </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="pagination" id="action-pager">
+                    <!--<li class="disabled"><span>«</span></li>
+                    <li class="active"><span>1</span></li>
+                    <li><a href="#1">2</a></li>
+                    <li class="disabled"><span>...</span></li>
+                    <li><a href="#!">14453</a></li>
+                    <li><a href="#!">»</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button type="button" class="btn btn-primary hidden" id="action-edit-show" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"></button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="exampleModalLabel">编辑</h4>
+			</div>
+			<div class="modal-body">
+				<form id="form-content" controller=""> </form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="action-close">关  闭</button>
+				<button type="button" class="btn btn-primary" id="action-submit">提  交</button>
+			</div>
+		</div>
+	</div>
+</div>
