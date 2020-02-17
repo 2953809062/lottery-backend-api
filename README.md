@@ -1,6 +1,22 @@
-### 游戏后端
+## 一、安装Golang
+- 1.1 下载地址
+https://golang.org/dl/
+- 1.2 安装
+tar -C /usr/local/go 安装包.tar.gz
+- 1.3 设置 gopath
+```bash
+mkdir ~/.go
+```
+- 1.3 设置环境变量
+修改 ~/.profile 文件
+```bash
+export GOPATH=$HOME/.go
+export GOROOT=/usr/local/go #注意此处必须设为 /usr/local/go
+export PATH=$PATH:/usr/local/go/bin:$HOME/.go/bin
+```
 
-- 安装插件
+#### 二、安装插件
+
 ```bash
 go get -v golang.org/x/lint/golint
 go get -v golang.org/x/tools/cmd/guru
