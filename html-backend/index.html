@@ -2,7 +2,6 @@
 <html class="x-admin-sm">
 	<head>
 		<!--#include virtual="/_include/head.html" -->
-		<!--<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
 		<link rel="stylesheet" href="/_static/css/login.css" />
 	</head>
 	<body class="login-bg">
@@ -18,19 +17,18 @@
 				<hr class="hr20" >
 			</form>
 		</div>
-		<script>
-			$(function  () {
-				layui.use('form', function(){
-					var form = layui.form; //监听提交
-					form.on('submit(login)', function(data){
-						// alert(888)
-						layer.msg(JSON.stringify(data.field),function(){
-							location.href='main.html'
-						});
-						return false;
-					});
-				});
-			})
-		</script>
+
 	</body>
-</html>
+</html>	
+<script>
+layui.use(['form', 'jquery'], function(){
+	var form = layui.form, $ = layui.jquery; //监听提交
+	form.on('submit(login)', function(data){
+		// alert(888)
+		layer.msg(JSON.stringify(data.field),function(){
+			location.href='main.html'
+		});
+		return false;
+	});
+});
+</script>
