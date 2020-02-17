@@ -7,7 +7,7 @@ import (
 	"validations"
 )
 
-/// 后台菜单
+// Activities - 活动
 var Activities = struct {
 	*common.Backend //基类
 }{
