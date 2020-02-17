@@ -42,7 +42,7 @@ go get -v honnef.co/go/tools/simple
 go get -v honnef.co/go/tools/staticcheck
 go get -v honnef.co/go/tools/stylecheck
 go get golang.org/x/tools/gopls
-
+go get github.com/polaris1119/go.tools/cmd/vet
 go get -v github.com/lib/pq
 ```
 
