@@ -42,8 +42,9 @@ go get -v honnef.co/go/tools/simple
 go get -v honnef.co/go/tools/staticcheck
 go get -v honnef.co/go/tools/stylecheck
 go get golang.org/x/tools/gopls
-go get github.com/polaris1119/go.tools/cmd/vet
 go get -v github.com/lib/pq
+#依据实际情况安装以下 vet 插件(如果运行有错误再安装)
+#go get github.com/polaris1119/go.tools/cmd/vet
 ```
 
 ## 三、创建数据库
