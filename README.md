@@ -1,17 +1,17 @@
 ## 一、安装Golang
-- 1.1 下载地址
+#### 1.1 下载安装包
 
 下载 tar.gz 压缩包: https://golang.org/dl/
 
-- 1.2 安装
+#### 1.2 安装GO
 
 执行命令: tar -C /usr/local/go xx.tar.gz 
 
-- 1.3 创建gopath目录
+#### 1.3 创建GOPATH目录
 ```bash
 mkdir ~/.go
 ```
-- 1.3 设置环境变量
+#### 1.3 设置环境变量
 修改 ~/.profile 文件
 ```bash
 export GOPATH=$HOME/.go
