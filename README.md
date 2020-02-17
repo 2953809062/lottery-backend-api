@@ -57,3 +57,31 @@ CREATE DATABASE IF NOT EXISTS game001 DEFAULT CHARSAET=UTF8 COLLATE=UTF8_GENERAL
 GRANT ALL PRIVILEGES ON game001.* TO 'game001'@'%' IDENTIFIED BY 'game001-x-lsl';
 FLUSH PRIVILEGES;
 ```
+
+## 四、设置配置文件
+#### 4.1 设置nginx配置文件
+```bash
+cp nginx.conf.default nginx.conf
+```
+
+#### 4.2 设置config配置文件
+```bash
+mkdir bin 
+cd bin
+cp -R ../config ./
+```
+
+## 五、启动程序
+执行以下命令，启动程序:
+```bash
+./start.sh
+```
+
+## 六、其他设置
+#### 6.1 设置忽略
+编辑 .git/info/exclude 文件
+将 nginx.conf 和 /bin 目录, 加入到忽略文件
+```
+echo '/nginx.conf' >> .git/info/exclude
+echo '/bin' >> .git/info/exclude
+```
