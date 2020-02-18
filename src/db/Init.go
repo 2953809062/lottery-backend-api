@@ -8,18 +8,18 @@ import (
 
 	"github.com/spf13/viper"
 
-	_ "github.com/go-sql-driver/mysql"
+	//_ "github.com/go-sql-driver/mysql"
 	"github.com/go-xorm/xorm"
 	//_ "github.com/lib/pq"
 )
 
-/// 所有数据库服务器
+// Servers 所有数据库服务器
 var Servers map[string]*xorm.EngineGroup
 
-/// 数据库: 平台名称 - 表名称 - 字段
+// TableFields 数据库: 平台名称 - 表名称 - 字段
 var TableFields map[string]map[string][]string
 
-/// 加载配置信息
+// LoadConfigs 加载配置信息
 func LoadConfigs() {
 	if Servers != nil {
 		return
@@ -71,21 +71,20 @@ func LoadConfigs() {
 	}
 }
 
-/// 初始化数据库服务器
+// InitDbServers 初始化数据库服务器
 func InitDbServers(platform string, dbType string, dataSources []string) {
 	if _, exists := Servers[platform]; exists { //如果已经存在则不处理
 		return
 	}
 	if engineGroup, err := xorm.NewEngineGroup(dbType, dataSources); err != nil {
 		log.Err("连接数据库错误: %v\n", err)
-		return
 	} else {
 		engineGroup.ShowSQL(true) //显示sql语句
 		Servers[platform] = engineGroup
 	}
 }
 
-/// 得到平台-站点-配置相关信息
+// GetPlatformConfigs 得到平台-站点-配置相关信息
 func GetPlatformConfigs(db *xorm.EngineGroup) []map[string]string {
 	data := []map[string]string{}
 	session := db.NewSession()
@@ -122,7 +121,7 @@ func GetPlatformConfigs(db *xorm.EngineGroup) []map[string]string {
 	return data
 }
 
-/// 默认的db
+// DefaultDb 默认的db
 func DefaultDb(platform string) *xorm.EngineGroup {
 	if Servers == nil {
 		fmt.Println("数据库连接不存在, 需要重新建立 ...")
@@ -134,7 +133,7 @@ func DefaultDb(platform string) *xorm.EngineGroup {
 	return Servers["sys_platform"]
 }
 
-/// 加载所有数据库/表/字段信息
+// LoadDbTableFields 加载所有数据库/表/字段信息
 func LoadDbTableFields() {
 	TableFields = map[string]map[string][]string{}
 	for platform, db := range Servers {
@@ -142,14 +141,13 @@ func LoadDbTableFields() {
 	}
 }
 
-/// 得到此数据库的所有表/字段
+// GetTableFieldsFromDb 得到此数据库的所有表/字段
 func GetTableFieldsFromDb(platform string, db *xorm.EngineGroup) map[string][]string {
 	// 先得到所有表
 	sql := "SHOW TABLES"
 	tableNames := []string{}
 	if rows, err := db.QueryString(sql); err != nil {
 		log.Err("获取所有表信息出错: %v\n", err)
-		return nil
 	} else {
 		field := "Tables_in_" + platform
 		for _, r := range rows {
@@ -174,9 +172,10 @@ func GetTableFieldsFromDb(platform string, db *xorm.EngineGroup) map[string][]st
 
 		return tableFields
 	}
+	return nil
 }
 
-/// 得到此平台的所有数据表/字段信息
+// GetDbTableFields 得到此平台的所有数据表/字段信息
 func GetDbTableFields(platform string) map[string][]string {
 	if tableFields, exists := TableFields[platform]; exists {
 		return tableFields
@@ -184,7 +183,7 @@ func GetDbTableFields(platform string) map[string][]string {
 	return nil
 }
 
-/// 获取表/字段信息
+// GetTableFields 获取表/字段信息
 func GetTableFields(platform string, table string) []string {
 	if tableFields := GetDbTableFields(platform); tableFields != nil {
 		if fields, exists := tableFields[table]; exists {
